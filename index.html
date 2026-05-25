@@ -2,8 +2,10 @@
 <html lang="en" style="min-height: -webkit-fill-available">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="format-detection" content="email=no" />
+    <script>(function(){const i={};document.addEventListener("error",function(s){const e=s.target;if(!e||e.tagName!=="SCRIPT"&&!(e.tagName==="LINK"&&(e.rel==="stylesheet"||e.rel==="preload"&&e.as==="style")))return;const a=e.src||e.href;if(!a)return;const r=a.replace(/([?&])retry=\d+(&?)/,(t,c,d)=>d?c:""),n=i[r]=(i[r]||0)+1;if(n>5){let t=!1;try{t=new URL(r).origin===window.location.origin}catch(c){}if(t)throw new Error(`Failed to load resource after 5 retries: ${r}`);return}s.stopImmediatePropagation();const l=r.indexOf("?")!==-1?"&":"?",o=`${r}${l}retry=${n}`,m=Math.random()*Math.min(1e4,1e3*Math.pow(2,n-1));setTimeout(function(){if(e.tagName==="SCRIPT"){const t=document.createElement("script");t.src=o,e.defer&&(t.defer=!0),e.async&&(t.async=!0),e.crossOrigin&&(t.crossOrigin=e.crossOrigin),document.head.appendChild(t)}else{const t=document.createElement("link");t.rel=e.rel,t.href=o,e.as&&(t.as=e.as),e.crossOrigin&&(t.crossOrigin=e.crossOrigin),document.head.appendChild(t)}},m)},!0)})();</script>
   </head>
   <body style="margin: 0;">
     <div id="root"></div>
