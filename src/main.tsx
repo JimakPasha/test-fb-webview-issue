@@ -6,7 +6,7 @@ createRoot(document.getElementById('root')!).render(
     <div>ATTEMPT</div>
     <div>ATTEMPT</div>
     <div>ATTEMPT</div>
-    <div>ATTEMPT: add style to html, and 2 meta tags</div>
+    <div>ATTEMPT: add retry script</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
