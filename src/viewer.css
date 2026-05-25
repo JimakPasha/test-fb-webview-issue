@@ -1,0 +1,62 @@
+:root {
+  --vh: 100vh; /* overridden by JS for WebView (e.g. Facebook WebView on iPhone) */
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: var(--vh);
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  font-family: Arial, Helvetica, sans-serif;
+  /* fix for iOS Safari webview SP-3627 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.root-default-zone {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  position: relative;
+  opacity: 1;
+  transform: none;
+}
+
+/* Fix: cookie banner hidden under home indicator in Facebook WebView (iPhone 16 Pro) */
+#onetrust-banner-sdk {
+  padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+}
+
+#CybotCookiebotDialog[name="CybotCookiebotDialog"],
+#CybotCookiebotDialog[name="CybotCookiebotDialog"][data-template="popup"] {
+  top: 100%;
+  transform: translate(-50%, -100%);
+  width: 100%;
+  max-width: 100%;
+}
+
+#ot-sdk-btn-floating {
+  bottom: unset;
+  top: 36px;
+  left: unset;
+  transform: translate(calc(100vw - 100% - 24px), -50%);
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.ReactCollapse--collapse {
+  transition: height 350ms;
+}

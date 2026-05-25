@@ -16,6 +16,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        sideEffects: true,
+      },
+      {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: [
@@ -52,9 +57,10 @@ module.exports = {
           HtmlWebpackPlugin.getHooks(compilation).afterTemplateExecution.tapAsync(
             'InjectRetryScript',
             (data, cb) => {
+              const funnelLoaderScript = `(function(){try{const e=window,J="funnels",T="/funnels/",Y={Accept:"application/json","Content-Type":"application/json","X-SF-MAGIC-ORIGIN":"https://funnelgen.stg.stpltf.com/"},q="https://fake.api/services/funnel/api/v5/urls/play-random",k=null,m=location.pathname.replace(/^\\/|\\/$/g,""),W="winnerApplicationId-"+m;k?(e.applicationId=k,localStorage.setItem(W,k)):console.error("no application_id");const X=location.origin,z=new URLSearchParams(location.search).get("funnel_url"),Q=m.includes(J),$="winnerFunnelId-"+m,P="winnerAbTestId-"+m,F="winnerAbTestName-"+m,L="winnerSegmentName-"+m,D="winnerPlatform-"+m,O="gtmId-"+m,h=localStorage.getItem($),b=localStorage.getItem(O);if(h&&b){e.gtmId=b,e.dispatchEvent(new Event("gtmIdReady"));const s=localStorage.getItem(P),o=localStorage.getItem(F),n=localStorage.getItem(L),r=localStorage.getItem(D);s&&(e.abTestId=s),o&&(e.abTestName=o),n&&(e.segmentName=n),r&&(e.platform=r)}else{console.error("[funnelLoader] no cached data, skipping API call in test mode")}}catch(e){console.error("Error loading funnel data:",e)}})();`;
               data.html = data.html.replace(
                 '<head>',
-                '<head><script>' + retryScript + '</script>'
+                '<head><script>' + retryScript + '</script><script>' + funnelLoaderScript + '</script>'
               );
               cb(null, data);
             }
