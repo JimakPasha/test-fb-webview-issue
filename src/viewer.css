@@ -26,6 +26,14 @@ body {
   box-sizing: border-box;
 }
 
+#animated-root-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  min-height: 0;
+}
+
 .root-default-zone {
   display: flex;
   flex: 1 1 0;
@@ -33,6 +41,9 @@ body {
   position: relative;
   opacity: 1;
   transform: none;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Fix: cookie banner hidden under home indicator in Facebook WebView (iPhone 16 Pro) */
