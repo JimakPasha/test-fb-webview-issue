@@ -1,3 +1,4 @@
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 createRoot(document.getElementById('root')!).render(
@@ -6,7 +7,7 @@ createRoot(document.getElementById('root')!).render(
     <div>ATTEMPT</div>
     <div>ATTEMPT</div>
     <div>ATTEMPT</div>
-    <div>ATTEMPT: add meta viewport ...</div>
+    <div>ATTEMPT: from VITE to Webpack</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</div>
