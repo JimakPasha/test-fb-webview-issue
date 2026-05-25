@@ -36,16 +36,16 @@ const buttonElemStyles: React.CSSProperties = {
 
 export const Bla = () => {
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
     
-      function setVH() {
-          document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
-        }
+  //     function setVH() {
+  //         document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+  //       }
         
-        setVH();
-        window.addEventListener('resize', setVH);
+  //       setVH();
+  //       window.addEventListener('resize', setVH);
 
-  }, []);
+  // }, []);
 
 
   return  (
